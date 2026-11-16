@@ -1,6 +1,6 @@
-# CORFAMILIAS · Corporación para las Familias de Colombia
+# CORFAMICOL · Corporación para las Familias de Colombia
 
-Sitio oficial de convocatorias y contacto de la **Corporación para las Familias de Colombia (CORFAMILIAS)**.
+Sitio oficial de convocatorias y contacto de la **Corporación para las Familias de Colombia (CORFAMICOL)**.
 
 Publicado con GitHub Pages.
 
@@ -8,7 +8,7 @@ Publicado con GitHub Pages.
 
 ```
 index.html                 Página de inicio (Inicio · Nosotros · Convocatorias · Contacto)
-logo_corfamilias.png       Logo oficial
+logo_corfamicol.png       Logo oficial
 .nojekyll                  Evita el procesamiento de Jekyll en GitHub Pages
 ```
 
