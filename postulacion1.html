@@ -132,6 +132,23 @@
     .dl-pdf{border:1px solid var(--line);color:var(--forest);background:#F7F4EC;}
     .dl-pdf:hover{border-color:var(--forest);}
     .dl-ext{color:var(--coral);border-bottom:1px solid #E9C7DD;padding:.28rem 0 !important;border-radius:0 !important;}
+    .entidad-box{
+        margin-top:1.6rem;background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--forest);
+        padding:1.2rem 1.4rem;
+    }
+    .entidad-box .eb-titulo{
+        font-family:Georgia,serif;font-size:1.05rem;color:var(--forest);margin-bottom:.5rem;
+    }
+    .entidad-box p{font-size:.9rem;color:#3E4A41;}
+    .entidad-box a{font-weight:700;text-decoration:none;border-bottom:1px solid #E9C7DD;}
+    .entidad-box ul{list-style:none;margin:.8rem 0;}
+    .entidad-box li{
+        display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+        padding:.45rem 0;border-bottom:1px dotted var(--line);font-size:.9rem;
+    }
+    .entidad-box li span{color:var(--muted);}
+    .entidad-box li b{color:var(--forest);letter-spacing:.02em;}
+    .entidad-box .eb-pie{font-size:.82rem;color:var(--muted);margin-top:.6rem;}
     .nota{
         margin-top:1.6rem;background:#FDF6E6;border-left:3px solid var(--amber);padding:1rem 1.2rem;
         font-size:.88rem;color:#6B5219;
@@ -389,8 +406,8 @@
                 <span class="doc-n">15</span>
                 <div>
                     <div class="doc-t">Certificado de inhabilidades por delitos sexuales</div>
-                    <div class="doc-nota">Válido del mes de octubre o noviembre.</div>
-                    <div class="doc-links"><a class="dl-ext" href="https://www.icbf.gov.co/" target="_blank" rel="noopener">Consultar ↗</a></div>
+                    <div class="doc-nota">Válido del mes de octubre o noviembre. Ver los datos de la entidad para la consulta.</div>
+                    <div class="doc-links"><a class="dl" href="https://inhabilidades.policia.gov.co:8080/" target="_blank" rel="noopener">Consultar certificado ↗</a></div>
                 </div>
             </li>
             <li class="doc-row">
@@ -466,6 +483,17 @@
                 </div>
             </li>
         </ol>
+        <div class="entidad-box">
+            <div class="eb-titulo">Cómo consultar el certificado de inhabilidades por delitos sexuales</div>
+            <p>El certificado se descarga en el portal de la Policía Nacional:
+               <a href="https://inhabilidades.policia.gov.co:8080/" target="_blank" rel="noopener">inhabilidades.policia.gov.co</a>.
+               En el formulario, donde piden los datos de la entidad que realiza la consulta, digite:</p>
+            <ul>
+                <li><span>Empresa o entidad consultante</span><b>CORPORACIÓN PARA LAS FAMILIAS DE COLOMBIA</b></li>
+                <li><span>NIT de la entidad</span><b>901316013-1</b></li>
+            </ul>
+            <p class="eb-pie">La consulta se hace con su autorización previa como aspirante: el formato firmado del ítem 14 va anexo en la hoja de vida.</p>
+        </div>
         <div class="nota">
             <b>Recomendaciones:</b> todos los documentos en PDF y legibles · los antecedentes y certificados
             deben ser del mes de octubre o noviembre · los formatos de autorización llevan fecha de noviembre de 2026
@@ -522,7 +550,7 @@
     <div class="wrap foot">
         <div class="f-brand">
             <img src="logo_corfamicol.png" alt="CORFAMICOL">
-            <div><b>CORFAMICOL</b> · Corporación para las Familias de Colombia</div>
+            <div><b>CORFAMICOL</b> · Corporación para las Familias de Colombia · NIT 901.316.013-1</div>
         </div>
         <div>Convocatoria 1 · Aguachica (Cesar) · Educación Inicial en el Hogar</div>
     </div>
