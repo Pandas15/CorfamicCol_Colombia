@@ -7,8 +7,10 @@ Publicado con GitHub Pages.
 ## Estructura
 
 ```
-index.html                 Página de inicio (Inicio · Nosotros · Convocatorias · Contacto)
-logo_corfamicol.png       Logo oficial
+index.html                 Página de inicio (listado de convocatorias)
+postulacion1.html          Convocatoria 1 — Aguachica (Cesar), Educación Inicial en el Hogar
+logo_corfamicol.png        Logo oficial
+documentos/                Formatos que descargan los aspirantes (.doc para firmar + .pdf para leer)
 .nojekyll                  Evita el procesamiento de Jekyll en GitHub Pages
 ```
 
