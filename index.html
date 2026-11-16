@@ -29,6 +29,21 @@
     main{padding:2.6rem 0 3.5rem;}
     h1{color:var(--verde-prof);font-size:1.8rem;margin-bottom:1.3rem;}
 
+    .conv-card{
+        display:block;background:#fff;border-radius:16px;padding:1.6rem 1.8rem;text-decoration:none;color:#333;
+        border-left:6px solid var(--verde);box-shadow:0 8px 22px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s;
+    }
+    .conv-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.12);}
+    .conv-estado{
+        display:inline-block;background:#28a745;color:#fff;font-size:.72rem;font-weight:700;
+        letter-spacing:.08em;text-transform:uppercase;padding:.22rem .7rem;border-radius:20px;margin-bottom:.6rem;
+    }
+    .conv-card h2{color:var(--verde-prof);font-size:1.25rem;margin-bottom:.4rem;}
+    .conv-card p{color:#4B5563;font-size:.95rem;}
+    .conv-cierre{color:#7a5b00 !important;font-weight:600;margin-top:.4rem !important;}
+    .conv-btn{display:inline-block;margin-top:1rem;background:var(--verde);color:#123F22;font-weight:700;
+        padding:.6rem 1.3rem;border-radius:24px;font-size:.9rem;}
+
     .aviso-vacio{
         background:#fff;border-radius:16px;padding:2.4rem 1.8rem;text-align:center;
         border:1px dashed #C9D6C0;box-shadow:0 8px 22px rgba(0,0,0,.05);
@@ -60,10 +75,13 @@
 <main>
     <div class="container">
         <h1>Convocatorias</h1>
-        <div class="aviso-vacio">
-            <h2>No hay convocatorias publicadas</h2>
-            <p>Cuando la corporación abra una convocatoria aparecerá en esta página.</p>
-        </div>
+        <a class="conv-card" href="postulacion1.html">
+            <span class="conv-estado">Abierta</span>
+            <h2>Convocatoria 1 — Aguachica (Cesar)</h2>
+            <p>Educación Inicial en el Hogar · 6 cargos · 360 cupos</p>
+            <p class="conv-cierre">Cierre: por confirmar</p>
+            <span class="conv-btn">Ver convocatoria →</span>
+        </a>
     </div>
 </main>
 
