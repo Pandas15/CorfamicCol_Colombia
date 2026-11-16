@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CORFAMILIAS · Corporación para las Familias de Colombia</title>
+<meta name="description" content="Corporación para las Familias de Colombia — CORFAMILIAS. Convocatorias de talento humano y trabajo con familias y primera infancia.">
+<style>
+    :root{
+        --verde:#77B72A;
+        --verde-osc:#1B5E32;
+        --verde-prof:#123F22;
+        --magenta:#C0398E;
+        --naranja:#F08A24;
+        --azul:#1F4E79;
+        --crema:#F6F8F3;
+        --texto:#2A2A2A;
+        --gris:#6B7280;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
+    html{scroll-behavior:smooth;}
+    body{line-height:1.65;color:var(--texto);background:#fff;}
+
+    /* ---------- HEADER ---------- */
+    header{
+        background:linear-gradient(135deg,var(--verde-osc) 0%,var(--verde-prof) 100%);
+        position:sticky;top:0;z-index:1000;
+        box-shadow:0 4px 14px rgba(0,0,0,.18);
+    }
+    .container{width:88%;max-width:1180px;margin:auto;}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem 0;flex-wrap:wrap;}
+    .marca{display:flex;align-items:center;gap:.85rem;text-decoration:none;color:#fff;}
+    .logo-chip{
+        background:#fff;border-radius:12px;padding:5px 8px;display:flex;align-items:center;justify-content:center;
+        box-shadow:0 2px 8px rgba(0,0,0,.25);
+    }
+    .logo-chip img{height:54px;width:auto;display:block;}
+    .marca-txt strong{display:block;font-size:1.15rem;letter-spacing:.08em;line-height:1.15;}
+    .marca-txt span{display:block;font-size:.72rem;opacity:.82;letter-spacing:.03em;text-transform:uppercase;}
+    nav ul{display:flex;list-style:none;gap:.3rem;align-items:center;flex-wrap:wrap;}
+    nav ul li a{
+        color:#fff;text-decoration:none;padding:.55rem .95rem;border-radius:22px;
+        font-weight:600;font-size:.9rem;transition:all .25s;display:inline-block;
+    }
+    nav ul li a:hover{background:rgba(255,255,255,.18);transform:translateY(-2px);}
+    nav ul li a.activo{background:var(--verde);color:#123F22;font-weight:700;}
+
+    /* ---------- HERO ---------- */
+    .hero{
+        background:linear-gradient(160deg,var(--verde-prof) 0%,var(--verde-osc) 55%,#2E7D45 100%);
+        color:#fff;padding:4.5rem 0 4rem;position:relative;overflow:hidden;
+    }
+    .hero::after{
+        content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+        background:radial-gradient(circle,rgba(119,183,42,.35),transparent 65%);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:2.5rem;align-items:center;position:relative;z-index:2;}
+    .pill{
+        display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+        padding:.35rem .9rem;border-radius:999px;font-size:.78rem;letter-spacing:.09em;
+        text-transform:uppercase;font-weight:700;margin-bottom:1.1rem;
+    }
+    .hero h1{font-size:2.6rem;line-height:1.18;margin-bottom:1rem;font-weight:800;}
+    .hero h1 em{font-style:normal;color:#A8DD63;}
+    .hero p{font-size:1.06rem;opacity:.93;max-width:560px;}
+    .hero-btns{display:flex;gap:.8rem;margin-top:1.8rem;flex-wrap:wrap;}
+    .btn{
+        display:inline-block;padding:.85rem 1.6rem;border-radius:30px;text-decoration:none;
+        font-weight:700;font-size:.95rem;transition:all .25s;border:2px solid transparent;
+    }
+    .btn-primario{background:var(--verde);color:#123F22;}
+    .btn-primario:hover{background:#8ED23A;transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.28);}
+    .btn-borde{border-color:rgba(255,255,255,.6);color:#fff;}
+    .btn-borde:hover{background:rgba(255,255,255,.14);transform:translateY(-3px);}
+    .hero-logo{
+        background:#fff;border-radius:26px;padding:1.4rem 1.2rem 1.1rem;display:flex;flex-direction:column;
+        align-items:center;justify-content:center;gap:.55rem;box-shadow:0 18px 44px rgba(0,0,0,.3);
+        max-width:300px;margin-left:auto;
+    }
+    .hero-logo img{height:104px;width:auto;display:block;}
+    .hero-logo .hl-nombre{
+        color:var(--verde-osc);font-weight:800;letter-spacing:.12em;font-size:.95rem;text-align:center;line-height:1.2;
+    }
+    .hero-logo .hl-sub{
+        color:#5B6B5F;font-size:.72rem;text-align:center;text-transform:uppercase;letter-spacing:.05em;line-height:1.35;
+    }
+
+    /* ---------- SECCIONES ---------- */
+    section{padding:3.8rem 0;}
+    .titulo-seccion{text-align:center;max-width:720px;margin:0 auto 2.4rem;}
+    .titulo-seccion .etiqueta{
+        color:var(--verde-osc);font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    }
+    .titulo-seccion h2{font-size:1.9rem;color:var(--verde-prof);margin:.35rem 0 .6rem;}
+    .titulo-seccion p{color:var(--gris);font-size:1rem;}
+
+    .pilares{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+    .pilar{
+        background:var(--crema);border-radius:16px;padding:1.8rem 1.5rem;border-top:5px solid var(--verde);
+        transition:transform .25s,box-shadow .25s;
+    }
+    .pilar:nth-child(2){border-top-color:var(--magenta);}
+    .pilar:nth-child(3){border-top-color:var(--naranja);}
+    .pilar:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.1);}
+    .pilar .icono{
+        width:52px;height:52px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;
+        font-size:1.6rem;margin-bottom:.9rem;box-shadow:0 4px 12px rgba(0,0,0,.08);
+    }
+    .pilar h3{font-size:1.1rem;color:var(--verde-prof);margin-bottom:.45rem;}
+    .pilar p{color:#4B5563;font-size:.94rem;}
+
+    /* ---------- CONVOCATORIAS ---------- */
+    #convocatorias{background:var(--crema);}
+    .aviso-vacio{
+        background:#fff;border-radius:18px;padding:2.6rem 2rem;text-align:center;max-width:720px;margin:auto;
+        border:1px dashed #C9D6C0;box-shadow:0 8px 24px rgba(0,0,0,.05);
+    }
+    .aviso-vacio .ico{font-size:2.4rem;margin-bottom:.6rem;}
+    .aviso-vacio h3{color:var(--verde-prof);font-size:1.25rem;margin-bottom:.5rem;}
+    .aviso-vacio p{color:var(--gris);font-size:.96rem;max-width:520px;margin:0 auto;}
+    .aviso-vacio .nota{
+        margin-top:1.3rem;font-size:.86rem;color:#7A5B00;background:#FFF6DC;border:1px solid #F0D99A;
+        border-radius:12px;padding:.8rem 1rem;display:inline-block;text-align:left;
+    }
+
+    /* ---------- CONTACTO ---------- */
+    .contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;}
+    .contacto-card{
+        background:linear-gradient(135deg,var(--verde-osc),var(--verde-prof));color:#fff;
+        border-radius:18px;padding:2rem;
+    }
+    .contacto-card h3{font-size:1.35rem;margin-bottom:.7rem;}
+    .contacto-card p{opacity:.92;font-size:.96rem;margin-bottom:1.3rem;}
+    .dato{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.9rem;font-size:.95rem;}
+    .dato .k{font-weight:800;opacity:.85;}
+    .contacto-info{background:var(--crema);border-radius:18px;padding:2rem;}
+    .contacto-info h3{color:var(--verde-prof);font-size:1.2rem;margin-bottom:.6rem;}
+    .contacto-info ul{list-style:none;margin-top:.8rem;}
+    .contacto-info ul li{padding:.5rem 0;border-bottom:1px solid #E3EAD9;font-size:.94rem;color:#4B5563;}
+    .contacto-info ul li:last-child{border-bottom:none;}
+
+    /* ---------- FOOTER ---------- */
+    footer{background:var(--verde-prof);color:rgba(255,255,255,.82);padding:2.2rem 0;font-size:.9rem;}
+    .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+    .footer-grid strong{color:#fff;}
+    footer .mini{font-size:.8rem;opacity:.7;margin-top:.2rem;}
+
+    /* ---------- RESPONSIVE ---------- */
+    @media(max-width:900px){
+        .hero-grid{grid-template-columns:1fr;}
+        .hero-logo{order:-1;max-width:280px;margin:auto;}
+        .hero h1{font-size:2.1rem;}
+        .pilares{grid-template-columns:1fr;}
+        .contacto-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:640px){
+        .container{width:92%;}
+        nav{justify-content:center;}
+        nav ul{justify-content:center;width:100%;}
+        .hero{padding:2.6rem 0;}
+        .hero h1{font-size:1.75rem;}
+        .logo-chip img{height:44px;}
+        section{padding:2.6rem 0;}
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="#inicio" class="marca">
+                <span class="logo-chip"><img src="logo_corfamilias.png" alt="Logo CORFAMILIAS"></span>
+                <span class="marca-txt">
+                    <strong>CORFAMILIAS</strong>
+                    <span>Corporación para las Familias de Colombia</span>
+                </span>
+            </a>
+            <ul>
+                <li><a href="#inicio" class="activo">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#convocatorias">Convocatorias</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+    <div class="container hero-grid">
+        <div>
+            <span class="pill">Familias · Primera infancia · Territorio</span>
+            <h1>Creciendo junto a las <em>familias</em> de Colombia</h1>
+            <p>
+                Somos la Corporación para las Familias de Colombia — CORFAMILIAS. Acompañamos a las
+                familias y a la primera infancia con talento humano comprometido, trabajo en territorio
+                y atención con calidad y calidez.
+            </p>
+            <div class="hero-btns">
+                <a href="#convocatorias" class="btn btn-primario">Ver convocatorias</a>
+                <a href="#contacto" class="btn btn-borde">Escríbenos</a>
+            </div>
+        </div>
+        <div class="hero-logo">
+            <img src="logo_corfamilias.png" alt="CORFAMILIAS">
+            <div class="hl-nombre">CORFAMILIAS</div>
+            <div class="hl-sub">Corporación para las<br>Familias de Colombia</div>
+        </div>
+    </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+    <div class="container">
+        <div class="titulo-seccion">
+            <div class="etiqueta">Quiénes somos</div>
+            <h2>Un equipo que camina con las familias</h2>
+            <p>Trabajamos para que cada niña, niño y su familia encuentre acompañamiento cercano, oportuno y respetuoso de su territorio y su cultura.</p>
+        </div>
+        <div class="pilares">
+            <div class="pilar">
+                <div class="icono">👨‍👩‍👧</div>
+                <h3>Familias acompañadas</h3>
+                <p>Acompañamiento cercano a las familias, reconociendo su rol como primer entorno protector de niñas y niños.</p>
+            </div>
+            <div class="pilar">
+                <div class="icono">🌱</div>
+                <h3>Primera infancia</h3>
+                <p>Atención integral con calidad, promoviendo el desarrollo, el juego, la salud y la nutrición en la primera etapa de la vida.</p>
+            </div>
+            <div class="pilar">
+                <div class="icono">🤝</div>
+                <h3>Trabajo en territorio</h3>
+                <p>Talento humano local y trabajo articulado con las comunidades, las autoridades y las instituciones de cada municipio.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONVOCATORIAS -->
+<section id="convocatorias">
+    <div class="container">
+        <div class="titulo-seccion">
+            <div class="etiqueta">Talento humano</div>
+            <h2>Convocatorias</h2>
+            <p>Aquí publicamos las vacantes de nuestra corporación, con el cargo, el municipio, los requisitos y la fecha de cierre.</p>
+        </div>
+        <div class="aviso-vacio">
+            <div class="ico">📢</div>
+            <h3>Aún no hay convocatorias publicadas</h3>
+            <p>En este momento no tenemos vacantes abiertas. Cuando abramos una convocatoria la verás en esta sección, con todos los detalles del cargo y cómo postularte.</p>
+            <div class="nota">Te invitamos a volver pronto o a escribirnos para que tu hoja de vida quede registrada.</div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+    <div class="container">
+        <div class="titulo-seccion">
+            <div class="etiqueta">Contacto</div>
+            <h2>Hablemos</h2>
+            <p>Para postulaciones, alianzas o cualquier inquietud sobre nuestras convocatorias.</p>
+        </div>
+        <div class="contacto-grid">
+            <div class="contacto-card">
+                <h3>Escríbenos</h3>
+                <p>Envíanos tu hoja de vida o tu consulta y te responderemos lo antes posible.</p>
+                <div class="dato"><span class="k">Correo:</span> <span>[[CORREO]]</span></div>
+                <div class="dato"><span class="k">Teléfono:</span> <span>[[TELEFONO]]</span></div>
+                <div class="dato"><span class="k">Dirección:</span> <span>[[DIRECCION]]</span></div>
+            </div>
+            <div class="contacto-info">
+                <h3>Antes de postularte</h3>
+                <p style="color:#4B5563;font-size:.95rem">Ten a mano los documentos que te pediremos en cada convocatoria:</p>
+                <ul>
+                    <li>Hoja de vida en formato único</li>
+                    <li>Cédula de ciudadanía</li>
+                    <li>Diploma y acta de grado · tarjeta profesional</li>
+                    <li>Certificados laborales</li>
+                    <li>RUT y autorización de tratamiento de datos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <strong>CORFAMILIAS</strong> · Corporación para las Familias de Colombia
+            <div class="mini">Sitio oficial de convocatorias y contacto.</div>
+        </div>
+        <div class="mini">© <span id="anio">2026</span> Todos los derechos reservados.</div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('anio').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
