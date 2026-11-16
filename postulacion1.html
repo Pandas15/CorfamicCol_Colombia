@@ -229,7 +229,7 @@
             </dl>
             <div class="cierre-box">
                 <div class="cierre-lbl">Cierre de postulaciones</div>
-                <div class="cierre-val" id="cierre-val">por confirmar</div>
+                <div class="cierre-val" id="cierre-val">lunes 16/11/2026 a las 12:00 de la noche</div>
                 <div class="cd" id="contador"></div>
             </div>
         </aside>
@@ -582,7 +582,7 @@ function renderizarCargos(){
 
 function actualizarContador(){
     const el = document.getElementById('contador');
-    const deadline = new Date('[[CIERRE_ISO]]').getTime();
+    const deadline = new Date('2026-11-17T00:00:00').getTime();
     if (isNaN(deadline)) {
         el.innerHTML = '<div style="grid-column:1/-1;font-size:.8rem;color:#6E7469">Disponible cuando se confirme la fecha.</div>';
         return;
