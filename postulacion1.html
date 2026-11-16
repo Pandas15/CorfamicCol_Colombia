@@ -38,6 +38,15 @@
         border:1px solid #EBD9B8;background:#FDF6E6;padding:.32rem .8rem;border-radius:3px;font-weight:700;
     }
 
+    /* ---------- BARRA DE CIERRE ---------- */
+    .cierre-bar{background:var(--coral);color:#fff;}
+    .cb-in{display:flex;align-items:center;gap:.7rem;padding:.62rem 0;flex-wrap:wrap;}
+    .cb-ico{font-size:1.05rem;line-height:1;}
+    .cb-lbl{font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;opacity:.88;font-weight:700;}
+    .cb-fecha{font-family:Georgia,serif;font-size:1rem;font-weight:600;}
+    .cb-resta{margin-left:auto;background:rgba(0,0,0,.24);padding:.26rem .75rem;border-radius:3px;
+        font-size:.8rem;font-weight:700;letter-spacing:.02em;white-space:nowrap;}
+
     /* ---------- HERO ---------- */
     .hero{padding:3.2rem 0 2.6rem;border-bottom:1px solid var(--line);}
     .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start;}
@@ -219,6 +228,15 @@
             </div>
         </div>
         <span class="topbar-tag">Convocatoria 1 · 2026</span>
+    </div>
+</div>
+
+<div class="cierre-bar">
+    <div class="wrap cb-in">
+        <span class="cb-ico">⏰</span>
+        <span class="cb-lbl">Cierre de postulaciones</span>
+        <span class="cb-fecha">martes 17/11/2026 a las 12:00 de la noche</span>
+        <span class="cb-resta" id="cb-resta">—</span>
     </div>
 </div>
 
@@ -619,11 +637,15 @@ function actualizarContador(){
     if (d < 0) {
         document.getElementById('cierre-val').textContent = 'Recepción cerrada';
         document.getElementById('estado-ficha').textContent = 'Cerrada';
+        const rb = document.getElementById('cb-resta');
+        if (rb) rb.textContent = 'Recepción cerrada';
         el.innerHTML = '<div style="grid-column:1/-1;font-size:.8rem;color:#B9337F">No recibe más postulaciones.</div>';
         return;
     }
     const dias = Math.floor(d/86400000), h = Math.floor(d%86400000/3600000),
           m = Math.floor(d%3600000/60000), s = Math.floor(d%60000/1000);
+    const resta = document.getElementById('cb-resta');
+    if (resta) resta.textContent = dias > 0 ? `Quedan ${dias} día${dias===1?'':'s'} y ${h} h` : `Quedan ${h} h ${m} min`;
     el.innerHTML = `<div><b>${dias}</b><small>Días</small></div><div><b>${h}</b><small>Horas</small></div>
                     <div><b>${m}</b><small>Min</small></div><div><b>${s}</b><small>Seg</small></div>`;
 }
