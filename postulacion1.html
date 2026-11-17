@@ -235,7 +235,7 @@
     <div class="wrap cb-in">
         <span class="cb-ico">⏰</span>
         <span class="cb-lbl">Cierre de postulaciones</span>
-        <span class="cb-fecha">martes 17/11/2026 a las 12:00 de la noche</span>
+        <span class="cb-fecha">martes 17/11/2026 a las 2:00 p.m.</span>
         <span class="cb-resta" id="cb-resta">—</span>
     </div>
 </div>
@@ -264,7 +264,7 @@
             </dl>
             <div class="cierre-box">
                 <div class="cierre-lbl">Cierre de postulaciones</div>
-                <div class="cierre-val" id="cierre-val">martes 17/11/2026 a las 12:00 de la noche</div>
+                <div class="cierre-val" id="cierre-val">martes 17/11/2026 a las 2:00 p.m.</div>
                 <div class="cd" id="contador"></div>
             </div>
         </aside>
@@ -628,7 +628,7 @@ function renderizarCargos(){
 
 function actualizarContador(){
     const el = document.getElementById('contador');
-    const deadline = new Date('2026-11-18T00:00:00').getTime();
+    const deadline = new Date('2026-11-17T14:00:00').getTime();
     if (isNaN(deadline)) {
         el.innerHTML = '<div style="grid-column:1/-1;font-size:.8rem;color:#6E7469">Disponible cuando se confirme la fecha.</div>';
         return;
